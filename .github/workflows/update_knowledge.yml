@@ -1,0 +1,21 @@
+name: Update Knowledge Weekly
+
+on:
+  schedule:
+    - cron: '0 3 * * 1' # every Monday 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger knowledge update
+        env:
+          ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
+          RENDER_ADMIN_URL: ${{ secrets.RENDER_ADMIN_URL }}
+        run: |
+          if [ -z "$RENDER_ADMIN_URL" ]; then
+            echo "RENDER_ADMIN_URL not set"
+            exit 1
+          fi
+          curl -sS -X POST "$RENDER_ADMIN_URL" -d "secret=$ADMIN_SECRET" -H "Content-Type: application/x-www-form-urlencoded" --fail
