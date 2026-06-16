@@ -1,0 +1,9 @@
+{
+  "roo-cline.vsCodeLmModelSelector": {
+    "vendor": "openrouter",
+    "family": "gpt-4o-mini"
+  },
+  "roo-cline.customStoragePath": ".roo-storage",
+  "roo-cline.apiRequestTimeout": 600,
+  "roo-cline.debug": false
+}

@@ -1,0 +1,18 @@
+{
+  "USN": {
+    "rate_income": 0.06,
+    "rate_income_minus_expenses": 0.15,
+    "limits": {
+      "turnover_limit": 3000000
+    }
+  },
+  "NDFL": {
+    "rate": 0.13
+  },
+  "INSURANCE": {
+    "pension": 0.22,
+    "social": 0.0304,
+    "medical": 0.051
+  },
+  "MROT": 15942
+}

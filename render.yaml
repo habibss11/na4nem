@@ -1,0 +1,19 @@
+# Render service manifest (template). Replace <owner>/<repo> with your GitHub repo.
+services:
+  - type: web
+    name: ai-accountant-backend
+    env: python
+    repo: https://github.com/<owner>/<repo>
+    branch: main
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OPENROUTER_API_KEY
+      - key: OPENROUTER_MODEL
+      - key: OPENROUTER_EMBED_MODEL
+      - key: SUPABASE_URL
+      - key: SUPABASE_KEY
+      - key: ADMIN_SECRET
+      - key: TELEGRAM_BOT_TOKEN
+      - key: TELEGRAM_CHAT_ID
